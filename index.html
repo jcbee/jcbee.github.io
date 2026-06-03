@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tesla Auth Redirect</title>
+</head>
+<body>
+    <p>Authenticating... Redirecting back to Simple Pace-o-meter</p>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if (code) {
+            // Forward the authorization code to our app's custom scheme
+            window.location.href = "simplealluregps://tesla-auth?code=" + code;
+        }
+    </script>
+</body>
+</html>
